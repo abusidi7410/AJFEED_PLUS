@@ -3,10 +3,14 @@ export const COMPANY = {
   slogan: "Perpetual Growth For Your Birds",
   sloganDisplay: "PERPETUAL GROWTH FOR YOUR BIRDS",
   business: "Poultry & Ruminant Feed Manufacturing",
-  phoneDisplay: "0806767 7676",
-  phoneHref: "tel:+2348067677676",
+  phones: [
+    { display: "0802 364 4982", href: "tel:+2348023644982" },
+    { display: "0806 767 7676", href: "tel:+2348067677676" },
+  ],
+  phoneDisplay: "0802 364 4982",
+  phoneHref: "tel:+2348023644982",
   whatsappNumber: "2348067677676",
-  email: "info@ajfeedplus.com.ng",
+  email: "info@ajfeedplus.com",
   address: {
     line1: "No. 03 Light Industrial Estate",
     line2: "Along Dry Port Road, Funtua, Katsina State",

@@ -95,15 +95,17 @@ export default function Footer() {
                   {COMPANY.address.country}
                 </span>
               </li>
-              <li>
-                <a
-                  href={COMPANY.phoneHref}
-                  className="flex items-center gap-2.5 transition hover:text-white"
-                >
-                  <Phone className="h-3.5 w-3.5 text-leaf-300" aria-hidden="true" />
-                  {COMPANY.phoneDisplay}
-                </a>
-              </li>
+              {COMPANY.phones.map((phone) => (
+                <li key={phone.href}>
+                  <a
+                    href={phone.href}
+                    className="flex items-center gap-2.5 transition hover:text-white"
+                  >
+                    <Phone className="h-3.5 w-3.5 text-leaf-300" aria-hidden="true" />
+                    {phone.display}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href={`mailto:${COMPANY.email}`}

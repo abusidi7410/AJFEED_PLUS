@@ -199,10 +199,16 @@ export default function ProductDetailPage({ product }: { product: Product }) {
                   <WhatsAppIcon className="h-4 w-4" />
                   Enquire on WhatsApp
                 </a>
-                <a href={COMPANY.phoneHref} className="btn btn-outline">
-                  <Phone className="h-4 w-4" aria-hidden="true" />
-                  {COMPANY.phoneDisplay}
-                </a>
+                {COMPANY.phones.map((phone) => (
+                  <a
+                    key={phone.href}
+                    href={phone.href}
+                    className="btn btn-outline"
+                  >
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                    {phone.display}
+                  </a>
+                ))}
               </div>
 
               <p className="mt-3 flex items-start gap-2 text-[10.5px] leading-relaxed text-ink/45">

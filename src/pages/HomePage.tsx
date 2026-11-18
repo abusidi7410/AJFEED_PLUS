@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import CommitmentCards from "../components/CommitmentCards";
 import MapEmbed from "../components/MapEmbed";
 import ProductCard from "../components/ProductCard";
+import RangeShowcase from "../components/RangeShowcase";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import WhatsAppIcon from "../components/WhatsAppIcon";
@@ -26,7 +27,7 @@ import { Link } from "../router/Router";
 const CONTACT_CARDS = [
   {
     label: "Call us",
-    value: COMPANY.phoneDisplay,
+    value: COMPANY.phones.map((phone) => phone.display).join(" · "),
     href: COMPANY.phoneHref,
     icon: Phone,
     external: false,
@@ -89,6 +90,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <RangeShowcase />
 
       <section className="section-padding bg-white" aria-labelledby="home-about">
         <div className="container-page grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">

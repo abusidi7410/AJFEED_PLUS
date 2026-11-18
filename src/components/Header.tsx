@@ -55,13 +55,21 @@ export default function Header() {
             {COMPANY.addressOneLine}
           </a>
           <div className="flex items-center gap-5">
-            <a
-              href={COMPANY.phoneHref}
-              className="inline-flex items-center gap-1.5 text-white/65 transition hover:text-gold"
-            >
+            <div className="flex items-center gap-1.5 text-white/65">
               <Phone className="h-3 w-3" aria-hidden="true" />
-              {COMPANY.phoneDisplay}
-            </a>
+              {COMPANY.phones.map((phone, index) => (
+                <span key={phone.href} className="flex items-center gap-1.5">
+                  {index > 0 && (
+                    <span className="text-white/25" aria-hidden="true">
+                      ·
+                    </span>
+                  )}
+                  <a href={phone.href} className="transition hover:text-gold">
+                    {phone.display}
+                  </a>
+                </span>
+              ))}
+            </div>
             <a
               href={`mailto:${COMPANY.email}`}
               className="inline-flex items-center gap-1.5 text-white/65 transition hover:text-gold"
@@ -175,10 +183,16 @@ export default function Header() {
             </a>
 
             <div className="mt-5 space-y-2.5 pb-2 text-[12px] text-ink/60">
-              <a href={COMPANY.phoneHref} className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-brand-700" aria-hidden="true" />
-                {COMPANY.phoneDisplay}
-              </a>
+              {COMPANY.phones.map((phone) => (
+                <a
+                  key={phone.href}
+                  href={phone.href}
+                  className="flex items-center gap-2"
+                >
+                  <Phone className="h-3.5 w-3.5 text-brand-700" aria-hidden="true" />
+                  {phone.display}
+                </a>
+              ))}
               <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-brand-700" aria-hidden="true" />
                 {COMPANY.email}

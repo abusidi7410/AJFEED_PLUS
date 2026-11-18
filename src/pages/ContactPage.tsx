@@ -19,7 +19,7 @@ const WHOLESALE_MESSAGE =
 const CONTACT_METHODS = [
   {
     label: "Telephone",
-    value: COMPANY.phoneDisplay,
+    value: COMPANY.phones.map((phone) => phone.display).join(" · "),
     helper: "Call our team directly",
     href: COMPANY.phoneHref,
     icon: Phone,
@@ -65,7 +65,7 @@ export default function ContactPage() {
       mainEntity: {
         "@type": "Organization",
         name: COMPANY.name,
-        telephone: "+2348067677676",
+        telephone: "+2348023644982",
         email: COMPANY.email,
         address: {
           "@type": "PostalAddress",

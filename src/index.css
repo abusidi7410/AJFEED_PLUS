@@ -234,4 +234,11 @@
     -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   }
+
+  .shadow-hero {
+    box-shadow:
+      0 60px 120px -40px rgba(0, 0, 0, 0.75),
+      0 20px 50px -30px rgba(0, 0, 0, 0.6);
+  }
+
 }
