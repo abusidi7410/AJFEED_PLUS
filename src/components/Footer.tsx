@@ -1,5 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import { PRODUCTS } from "../data/products";
+import { PRODUCT_COUNTS } from "../data/products";
 import {
   COMPANY,
   DEFAULT_WHATSAPP_MESSAGE,
@@ -67,19 +67,32 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h2 className="text-[10.5px] font-bold uppercase tracking-[0.2em] text-gold">
-              Products
+              Feed range
             </h2>
             <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5">
-              {PRODUCTS.map((product) => (
-                <li key={product.slug}>
+              {[
+                { label: "Broiler", count: PRODUCT_COUNTS.broiler },
+                { label: "Layer", count: PRODUCT_COUNTS.layer },
+                { label: "Ruminant", count: PRODUCT_COUNTS.ruminant },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    to={`/products/${product.slug}`}
+                    to="/products"
                     className="text-[12.5px] text-white/60 transition hover:text-white"
                   >
-                    {product.name}
+                    {item.label}{" "}
+                    <span className="text-white/30">{item.count}</span>
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/products"
+                  className="text-[12.5px] font-semibold text-gold transition hover:text-gold-light"
+                >
+                  All products
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://www.ajfeedplus.com.ng";
+const SITE_URL = "https://ajfeedplus.com";
 const DEFAULT_IMAGE = `${SITE_URL}/images/brand-card.png`;
 
 interface PageMeta {

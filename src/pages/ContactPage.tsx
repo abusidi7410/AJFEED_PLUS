@@ -61,7 +61,7 @@ export default function ContactPage() {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       name: "Contact AJ FEED PLUS",
-      url: "https://www.ajfeedplus.com.ng/contact",
+      url: "https://ajfeedplus.com/contact",
       mainEntity: {
         "@type": "Organization",
         name: COMPANY.name,

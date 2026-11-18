@@ -52,7 +52,7 @@ export default function ProductsPage() {
         "@type": "ListItem",
         position: index + 1,
         name: product.name,
-        url: `https://www.ajfeedplus.com.ng/products/${product.slug}`,
+        url: `https://ajfeedplus.com/products/${product.slug}`,
       })),
     },
   });

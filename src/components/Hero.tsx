@@ -6,7 +6,7 @@ import { Link } from "../router/Router";
 import HeroSlider from "./HeroSlider";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-const HERO_PRODUCTS = FEATURED_PRODUCTS.slice(0, 5);
+const HERO_PRODUCTS = FEATURED_PRODUCTS.slice(0, 3);
 
 export default function Hero() {
   return (

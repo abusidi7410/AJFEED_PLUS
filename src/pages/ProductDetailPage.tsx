@@ -35,7 +35,7 @@ export default function ProductDetailPage({ product }: { product: Product }) {
     description: product.shortDescription,
     path,
     image: product.image
-      ? `https://www.ajfeedplus.com.ng${product.image}`
+      ? `https://ajfeedplus.com${product.image}`
       : undefined,
     jsonLd: {
       "@context": "https://schema.org",
@@ -43,7 +43,7 @@ export default function ProductDetailPage({ product }: { product: Product }) {
       name: product.name,
       description: product.shortDescription,
       category: product.categoryLabel,
-      url: `https://www.ajfeedplus.com.ng${path}`,
+      url: `https://ajfeedplus.com${path}`,
       brand: { "@type": "Brand", name: COMPANY.name },
       additionalProperty: [
         ...(product.feedForm

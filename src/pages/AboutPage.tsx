@@ -33,7 +33,7 @@ export default function AboutPage() {
       "@context": "https://schema.org",
       "@type": "AboutPage",
       name: "About AJ FEED PLUS",
-      url: "https://www.ajfeedplus.com.ng/about",
+      url: "https://ajfeedplus.com/about",
       about: {
         "@type": "Organization",
         name: "AJ FEED PLUS",

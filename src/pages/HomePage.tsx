@@ -7,14 +7,14 @@ import {
 } from "lucide-react";
 import Hero from "../components/Hero";
 import CommitmentCards from "../components/CommitmentCards";
+import FeedRange from "../components/FeedRange";
+import HomeAbout from "../components/HomeAbout";
 import MapEmbed from "../components/MapEmbed";
-import ProductCard from "../components/ProductCard";
-import RangeShowcase from "../components/RangeShowcase";
+import OrderSteps from "../components/OrderSteps";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import WhatsAppIcon from "../components/WhatsAppIcon";
-import { ABOUT_INTRO, COMMITMENT_STATEMENT } from "../data/content";
-import { FEATURED_PRODUCTS, PRODUCTS } from "../data/products";
+import { COMMITMENT_STATEMENT } from "../data/content";
 import {
   COMPANY,
   DEFAULT_WHATSAPP_MESSAGE,
@@ -60,99 +60,11 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <section className="section-padding bg-cream" aria-labelledby="home-products">
-        <div className="container-page">
-          <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading
-              eyebrow="Our Products"
-              title={
-                <span id="home-products">
-                  One range. Every stage of production.
-                </span>
-              }
-              description={`${PRODUCTS.length} products across broiler, layer and ruminant nutrition — from chick development and growing pullets to finishing, egg production and livestock feeding.`}
-            />
-            <Link
-              to="/products"
-              className="btn btn-outline shrink-0 self-start sm:self-auto"
-            >
-              View all {PRODUCTS.length} products
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Reveal>
+      <HomeAbout />
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {FEATURED_PRODUCTS.map((product, index) => (
-              <Reveal key={product.slug} delay={index * 60} className="h-full">
-                <ProductCard product={product} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeedRange />
 
-      <RangeShowcase />
-
-      <section className="section-padding bg-white" aria-labelledby="home-about">
-        <div className="container-page grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-          <Reveal variant="left">
-            <SectionHeading
-              eyebrow="About Us"
-              title={
-                <span id="home-about">
-                  A Nigerian feed business built around the farmer.
-                </span>
-              }
-              description={ABOUT_INTRO[0]}
-            />
-            <p className="mt-5 max-w-xl text-pretty text-[14.5px] leading-relaxed text-ink/65">
-              {ABOUT_INTRO[1]}
-            </p>
-            <Link to="/about" className="btn btn-green mt-7">
-              More about AJ FEED PLUS
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Reveal>
-
-          <Reveal variant="right" delay={120} className="grid gap-3 sm:grid-cols-2">
-            {[
-              { label: "Location", value: "Funtua, Katsina State" },
-              { label: "Focus", value: "Poultry & ruminant nutrition" },
-              { label: "Business", value: "Animal feed manufacturing" },
-              { label: "Serves", value: "Farmers, dealers & distributors" },
-            ].map((fact) => (
-              <div
-                key={fact.label}
-                className="rounded-2xl border border-brand-900/10 bg-cream p-5 transition duration-300 hover:-translate-y-1 hover:border-brand-700/20 hover:shadow-soft"
-              >
-                <p className="text-[9.5px] font-bold uppercase tracking-[0.18em] text-brand-700">
-                  {fact.label}
-                </p>
-                <p className="mt-2 font-display text-[15px] font-bold leading-snug text-brand-950">
-                  {fact.value}
-                </p>
-              </div>
-            ))}
-
-            <div className="relative overflow-hidden rounded-2xl bg-brand-800 p-6 text-white transition duration-500 hover:-translate-y-1 hover:shadow-card sm:col-span-2">
-              <div className="absolute inset-0 bg-noise opacity-40" aria-hidden="true" />
-              <div
-                className="absolute -right-10 -top-10 h-36 w-36 animate-float-slow rounded-full border border-gold/20"
-                aria-hidden="true"
-              />
-              <p className="text-[9.5px] font-bold uppercase tracking-[0.2em] text-gold">
-                Our promise
-              </p>
-              <p className="relative mt-3 font-display text-xl font-extrabold leading-snug">
-                A clear range. Straightforward ordering. Direct communication.
-              </p>
-              <p className="relative mt-3 text-[12px] leading-relaxed text-white/60">
-                {COMPANY.slogan}.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <OrderSteps />
 
       <section className="relative overflow-hidden bg-brand-950" aria-labelledby="home-commitment">
         <div className="absolute inset-0 bg-grid-soft opacity-[0.1]" aria-hidden="true" />
