@@ -18,7 +18,7 @@ export const COMPANY = {
   },
   addressOneLine:
     "No. 03 Light Industrial Estate, Along Dry Port Road, Funtua, Katsina State, Nigeria.",
-  website: "https://www.ajfeedplus.com.ng",
+  website: "https://ajfeedplus.com",
 } as const;
 
 export const ROUTES = {
